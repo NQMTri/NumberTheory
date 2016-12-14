@@ -20,10 +20,8 @@ install:
   - conda install numpy
   - conda install scipy
   - pip install -U pytest
-  - pip install -U pyimgur
 
 script:
   # Your test script goes here
-  - pytest -v -s ./test/test_util.py
-  - pytest -v -s ./test/test_detector.py
-  - pytest -v -s ./test/test_matches.py
+  - pytest -v -s ./test/test_EEA.py
+
