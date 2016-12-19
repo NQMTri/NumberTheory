@@ -1,29 +1,32 @@
-import math
-def EEA(a, b):
-    if (a < b):
-        t = a
-        a = b
-        b = t
+from utilities import *
 
-    r = a
-    r1= b
-    s = 1
-    s1= 0
-    t = 0
-    t1= 1
-    while r1 != 0:
-        q = r/r1
-        r2 = r % r1
-        tmp_s1 = s - s1*q
-        tmp_t1 = t - t1*q
-        r = r1
-        s = s1
-        t = t1
-        r1 = r2
-        s1 = tmp_s1
-        t1 = tmp_t1
+
+# input: two integers a, b
+# output: three integers d, s, t such that
+#       d = gcd(a, b)
+#   and a*s + b*t = 1
+def EEA(a, b):
+    print("EEA(%ld, %ld):" %(a, b))
+    printEntry("i", "r(i)", "q(i)", "s(i)", "t(i)")
+    print("------------------------------------------------------------------------")
+    r, rr = a, b
+    s, ss = 1, 0
+    t, tt = 0, 1
+    i = 0
+    printEntry(i, r, "", s, t)
+    while rr != 0:
+        i += 1
+        q = r/rr
+        rrr = r % rr
+        r, s, t, rr, ss, tt = rr, ss, tt, rrr, (s-ss*q), (t-tt*q)
+        printEntry(i, r, q, s, t)
+    printEntry(i+1, rr, "", ss, tt)
     d = r
     return (d, s, t)
 
-d, s, t = EEA(15, 12)
-print (d, s, t)
+
+def printEntry(i, r, q, s, t):
+    print("%10s | %10s %10s %10s %10s" %(str(i), str(r), str(q), str(s), str(t)))
+
+
+# EEA(1009, 469)
