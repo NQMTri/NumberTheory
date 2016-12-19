@@ -1,24 +1,5 @@
-import math
-
-
-def mmod(a, n):
-	ans = a % n
-	if (ans < 0):
-		return ans + n
-	return ans
-
-
-def EEA(a, b):
-	r, rr = a, b
-	s, ss = 1, 0
-	t, tt = 0, 1
-	while rr != 0:
-		q = r/rr
-		rrr = r % rr
-		r, s, t, rr, ss, tt = rr, ss, tt, rrr, (s-ss*q), (t-tt*q)
-	d = r
-	return (d, s, t)
-
+from utilities import *
+from EEA import EEA
 
 
 def EffectiveThueLemma(n, b, R):
@@ -65,4 +46,4 @@ def check(n, b, R):
 
 
 # check(10, 7, 3)
-check(1234567891011121314151617, 9876543210, 29)
+# check(1234567891011121314151617, 9876543210, 29)
