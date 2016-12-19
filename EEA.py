@@ -4,7 +4,7 @@ from utilities import *
 # input: two integers a, b
 # output: three integers d, s, t such that
 #       d = gcd(a, b)
-#   and a*s + b*t = 1
+#   and a*s + b*t == d
 def EEA(a, b):
     print("EEA(%ld, %ld):" %(a, b))
     printEntry("i", "r(i)", "q(i)", "s(i)", "t(i)")
