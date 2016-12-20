@@ -43,6 +43,12 @@ def Theorem4_9(n, b, R):
 	return None
 
 
+def gcd(a, b):
+	if b == 0:
+		return a
+	return gcd(b, a%b)
+
+
 def RationalReconstruction(value, M = int(1e9)):
 	# check if value is already an integer
 	if value.is_integer():
@@ -72,7 +78,11 @@ def RationalReconstruction(value, M = int(1e9)):
 	# 3. Output the rational number -s'/t'
 	if tt < 0:
 		ss, tt = -ss, -tt
-	return (-ss*p10, tt)
+	ss *= p10
+	g = gcd(abs(ss), abs(tt))
+	ss /= g
+	tt /= g
+	return (-ss, tt)
 
 
 def main():
