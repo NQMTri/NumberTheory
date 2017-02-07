@@ -1,0 +1,5 @@
+python RationalReconstruction.py 0.5263045703 100000
+python RationalReconstruction.py 0.4705588083 100000
+python RationalReconstruction.py 0.15867301   10000
+python RationalReconstruction.py 0.61803713   1000
+python RationalReconstruction.py 0.38144 100
